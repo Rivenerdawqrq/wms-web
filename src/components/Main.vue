@@ -3,7 +3,7 @@
         <div style="margin-bottom: 5px;">
             <el-input v-model="name" placeholder="请输入名字" clearable suffix-icon="el-icon-search" style="width: 200px;"
                       @keyup.enter.native="loadPost"></el-input>
-            <el-select v-model="se1x" filterable placeholder="请1选择性别" clearable style="margin-left: 5px;">
+            <el-select v-model="se1x" filterable placeholder="请选泽性别" clearable style="margin-left: 5px;">
                 <el-option
                         v-for="item in sexs"
                         :key="item.value"
@@ -14,7 +14,7 @@
             <el-button type="primary" style="margin-left: 5px;" @click="loadPost">查询</el-button>
             <el-button type="success" @click="resetParam">重置</el-button>
 
-            <el-button type="primary" style="margin-left: 5px;" @click="add">新增</el-button>
+            <el-button type="primary" style="margin-left: 5px;" @click="ad22d">新增</el-button>
         </div>
         <el-table :data="tableData"
                  :header-cell-style="{ background: '#f2f5fc', color: '#555555' }"
