@@ -1,9 +1,9 @@
 <template>
     <div>
         <div style="margin-bottom: 5px;">
-            <el-input v-model="name" placeholder="请输入名字" suffix-icon="el-icon-search" style="width: 200px;"
+            <el-input v-model="name" placeholder="请输入名字" clearable suffix-icon="el-icon-search" style="width: 200px;"
                       @keyup.enter.native="loadPost"></el-input>
-            <el-select v-model="sex" filterable placeholder="请选择性别" style="margin-left: 5px;">
+            <el-select v-model="se1x" filterable placeholder="请1选择性别" clearable style="margin-left: 5px;">
                 <el-option
                         v-for="item in sexs"
                         :key="item.value"
@@ -32,15 +32,16 @@
                 <template slot-scope="scope">
                     <el-tag
                             :type="scope.row.sex === 1 ? 'primary' : 'success'"
-                            disable-transitions>{{scope.row.sex === 1 ? '男' : '女'}}</el-tag>
+                            disable-transitions>{{scope.row.sex === 1 ? '男' : '女'}}
+                    </el-tag>
                 </template>
             </el-table-column>
             <el-table-column prop="roleId" label="角色" width="120">
                 <template slot-scope="scope">
                     <el-tag
                             :type="scope.row.roleId === 0 ? 'danger' : (scope.row.roleId === 1 ? 'primary' : 'success')"
-                            disable-transitions>{{scope.row.roleId === 0 ? '超级管理员' :
-                                                    (scope.row.roleId === 1 ? '管理员' : '用户')}}</el-tag>
+                            disable-transitions>{{scope.row.roleId === 0 ? '超级管理员' : (scope.row.roleId === 1 ? '管理员' : '用户')}}
+                    </el-tag>
                 </template>
             </el-table-column>
             <el-table-column prop="phone" label="电话" width="180">
@@ -232,6 +233,8 @@
                     this.form.sex = row.sex +''
                     this.form.phone = row.phone
                     this.form.roleId = row.roleId
+                    // // this.form = row
+                    // console.log(1111)
                 })
             },
             add(){
